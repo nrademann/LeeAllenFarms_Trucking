@@ -1,6 +1,7 @@
-﻿using LeeAllenFarms_Trucking;
-using LeeAllenFarms_Trucking.Models;
+﻿using LeeAllenFarms_Trucking.Models;
 using Microsoft.AspNetCore.Mvc;
+
+
 
 namespace LeeAllenFarms_Trucking.Controllers
 {
@@ -23,6 +24,26 @@ namespace LeeAllenFarms_Trucking.Controllers
         public IActionResult AddClient(Client client)
         {
             db.Add(client);
+            db.SaveChanges();
+            return RedirectToAction("AllClient");
+        }
+        public IActionResult EditClient(int id)
+        {
+            Client client;
+            client = db.Clients.Find(id);
+            return View(client);
+        }
+        [HttpPost]
+        public IActionResult EditClient(Client client)
+        {
+            db.Update(client);
+            db.SaveChanges();
+            return RedirectToAction("AllClient");
+        }
+        [HttpPost]
+        public IActionResult DeleteClient(Client client)
+        {
+            db.Remove(client);
             db.SaveChanges();
             return RedirectToAction("AllClient");
         }

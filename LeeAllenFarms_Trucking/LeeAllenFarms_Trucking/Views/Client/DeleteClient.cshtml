@@ -1,0 +1,22 @@
+﻿@model LeeAllenFarms_Trucking.Models.Client
+<h3>Delete the Client</h3>
+<p>Are you sure you want to delete this Client?</p>
+<form asp-controller="Client" asp-action="DeleteClient"
+    method="post">
+    <label asp-for="ClientId"></label>
+    <input asp-for="ClientId" readonly="readonly" />
+    <br />
+    <label asp-for="ClientName"></label>
+    <input asp-for="ClientName" readonly="readonly" />
+    <br />
+    <label asp-for="ClientEmail"></label>
+    <input asp-for="ClientEmail" readonly="readonly" />
+    <br />
+    <label asp-for="ClientPhone"></label>
+    <input asp-for="ClientPhone" readonly="readonly" />
+    <br />
+    <button type="submit"> Yes Delete </button>
+    <p> <a asp-controller="Client" asp-action="AllClient">
+        No, Back to List </a></p>
+</form>
+

@@ -15,6 +15,8 @@
                 <th>Client Name</th>
                 <th>Client Email</th>
                 <th>Client Phone Number</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
             @{
                 foreach(var client in Model)
@@ -22,8 +24,10 @@
                     <tr>
                         <td>@client.ClientId</td>
                         <td>@client.ClientName</td>
-                        <th>@client.ClientEmail</th>
-                        <th>@client.ClientPhone</th>
+                        <td>@client.ClientEmail</td>
+                        <td>@client.ClientPhone</td>
+                        <td><a asp-action="EditClient" asp-route-id="@client.ClientId">Edit</a></td>
+                        <td><a asp-action="DeleteClient" asp-route-id="@client.ClientId">Delete</a></td>
                     </tr>
                 }
             }
