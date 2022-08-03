@@ -1,0 +1,32 @@
+﻿@model IEnumerable<LeeAllenFarms_Trucking.Models.Client>
+<p><a asp-controller="Client" asp-action="AddClient">
+    Add a Client</a></p>
+@{
+    if(Model.Count() < 1)
+    {
+        <p>No Clients in database yet</p>
+    }
+    else
+    {
+        <h3>All Clients</h3>
+        <table border="1">
+            <tr>
+                <th>Client Id</th>
+                <th>Client Name</th>
+                <th>Client Email</th>
+                <th>Client Phone Number</th>
+            </tr>
+            @{
+                foreach(var client in Model)
+                {
+                    <tr>
+                        <td>@client.ClientId</td>
+                        <td>@client.ClientName</td>
+                        <th>@client.ClientEmail</th>
+                        <th>@client.ClientPhone</th>
+                    </tr>
+                }
+            }
+        </table>
+    }
+}
