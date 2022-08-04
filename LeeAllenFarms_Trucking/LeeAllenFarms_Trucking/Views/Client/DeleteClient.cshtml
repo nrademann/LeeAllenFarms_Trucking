@@ -1,6 +1,5 @@
 ﻿@model LeeAllenFarms_Trucking.Models.Client
 <h3>Delete the Client</h3>
-<p>Are you sure you want to delete this Client?</p>
 <form asp-controller="Client" asp-action="DeleteClient"
     method="post">
     <label asp-for="ClientId"></label>
@@ -16,7 +15,6 @@
     <input asp-for="ClientPhone" readonly="readonly" />
     <br />
     <button type="submit"> Yes Delete </button>
+</form>
     <p> <a asp-controller="Client" asp-action="AllClient">
         No, Back to List </a></p>
-</form>
-
