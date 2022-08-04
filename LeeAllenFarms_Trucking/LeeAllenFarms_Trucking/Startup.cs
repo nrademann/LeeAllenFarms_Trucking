@@ -31,8 +31,7 @@ namespace LeeAllenFarms_Trucking
                     Trusted_Connection=True;";
             services.AddDbContext<ClientDbContext>
                 (options => options.UseSqlServer(connection));
-        }
-
+         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
