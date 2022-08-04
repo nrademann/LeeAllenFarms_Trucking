@@ -2,19 +2,18 @@
 <h3>Delete the Client</h3>
 <form asp-controller="Client" asp-action="DeleteClient"
     method="post">
-    <label asp-for="ClientId"></label>
-    <input asp-for="ClientId" readonly="readonly" />
-    <br />
+    <input asp-for="ClientId" type="hidden" />
     <label asp-for="ClientName"></label>
-    <input asp-for="ClientName" readonly="readonly" />
+    <input asp-for="ClientName" />
     <br />
     <label asp-for="ClientEmail"></label>
-    <input asp-for="ClientEmail" readonly="readonly" />
+    <input asp-for="ClientEmail" />
     <br />
     <label asp-for="ClientPhone"></label>
-    <input asp-for="ClientPhone" readonly="readonly" />
+    <input asp-for="ClientPhone" />
     <br />
     <button type="submit"> Yes Delete </button>
+
 </form>
     <p> <a asp-controller="Client" asp-action="AllClient">
         No, Back to List </a></p>

@@ -1,6 +1,6 @@
 ﻿using LeeAllenFarms_Trucking.Models;
 using Microsoft.AspNetCore.Mvc;
-
+using System;
 
 
 namespace LeeAllenFarms_Trucking.Controllers
@@ -33,6 +33,13 @@ namespace LeeAllenFarms_Trucking.Controllers
             client = db.Clients.Find(id);
             return View(client);
         }
+        public IActionResult DeleteClient(int id)
+        {
+            Client client;
+            client = db.Clients.Find(id);
+            return View(client);
+        }
+
         [HttpPost]
         public IActionResult EditClient(Client client)
         {
@@ -40,6 +47,7 @@ namespace LeeAllenFarms_Trucking.Controllers
             db.SaveChanges();
             return RedirectToAction("AllClient");
         }
+
         [HttpPost]
         public IActionResult DeleteClient(Client client)
         {
